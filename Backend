@@ -1,0 +1,48 @@
+// FridgeController.java
+import java.util.ArrayList;
+import java.util.List;
+
+public class FridgeController {
+    private List<String> shoppingList;
+    private SmartFridge fridge;
+
+    public FridgeController(SmartFridge fridge) {
+        this.fridge = fridge;
+        this.shoppingList = new ArrayList<>();
+    }
+
+    public void addItemToShoppingList(String item) {
+        shoppingList.add(item);
+    }
+
+    public void orderGroceries() {
+        // Call API to order groceries
+        String apiUrl = "https://grocery-api.com/order";
+        String requestBody = "{\"items\": " + shoppingList + "}";
+        HttpClient client = new HttpClient();
+        client.post(apiUrl, requestBody);
+    }
+}
+
+// SmartFridge.java
+public class SmartFridge {
+    private String fridgeId;
+    private List<String> contents;
+
+    public SmartFridge(String fridgeId) {
+        this.fridgeId = fridgeId;
+        this.contents = new ArrayList<>();
+    }
+
+    public void addItem(String item) {
+        contents.add(item);
+    }
+
+    public void removeItem(String item) {
+        contents.remove(item);
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+}
