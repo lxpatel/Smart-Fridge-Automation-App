@@ -1,0 +1,24 @@
+/* styles.css */
+#shopping-list-view {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#shopping-list-view li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#order-groceries-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#order-groceries-button:hover {
+    background-color: #3e8e41;
+}
