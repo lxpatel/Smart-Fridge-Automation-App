@@ -1,0 +1,29 @@
+// MainActivity.java
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+
+public class MainActivity extends AppCompatActivity {
+    private ListView shoppingListListView;
+    private Button orderGroceriesButton;
+    private FridgeController fridgeController;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        shoppingListListView = findViewById(R.id.shopping_list_view);
+        orderGroceriesButton = findViewById(R.id.order_groceries_button);
+
+        fridgeController = new FridgeController(new SmartFridge("my_fridge_id"));
+
+        orderGroceriesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fridgeController.orderGroceries();
+            }
+        });
+    }
+}
