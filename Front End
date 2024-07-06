@@ -1,0 +1,17 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Fridge App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Smart Fridge App</h1>
+    <ul id="shopping-list-view">
+        <!-- shopping list items will be displayed here -->
+    </ul>
+    <button id="order-groceries-button">Order Groceries</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
